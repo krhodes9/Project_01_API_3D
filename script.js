@@ -1,10 +1,13 @@
-require(["esri/Map",
+ require(["esri/Map",
       "esri/WebScene",
       "esri/views/SceneView",
       "esri/Camera",
+      "esri/widgets/Legend",
+      "esri/widgets/Expand",
+      "esri/widgets/LayerList",
       "esri/widgets/Home",
-      "dojo/domReady"    ], 
-       function(Map, WebScene, SceneView, Camera, Home) {
+      "dojo/domReady"], 
+       function(Map, WebScene, SceneView, Camera, Legend,        Expand, LayerList, Home) {
 
       var map = new Map({
         basemap: "streets",
@@ -16,15 +19,15 @@ require(["esri/Map",
          id:"5c223027020d4cba9d30c7ee38987b8d" 
         }
       });
-      
+     
       var camera = new Camera({
         fov: 170,
         position: [
            2.5937,
-          -18.9629,
-          9400000// elevation in meters
+          -20.9629,
+          8000000// elevation in meters
         ],
-        tilt: 22,
+        tilt: 25,
         heading: 0
       })
       
@@ -33,9 +36,9 @@ require(["esri/Map",
         position: [
            36.5937,
           -15.9629,
-          9500000// elevation in meters
+          8000000// elevation in meters
         ],
-        tilt: 20,
+        tilt: 25,
         heading: 0,
       });
            
@@ -43,7 +46,7 @@ require(["esri/Map",
           position: [
            32.7832,
          20.5085,
-          20000000// elevation in meters
+          25000000// elevation in meters
         ],
         tilt: 0,
         heading: 0
@@ -67,6 +70,30 @@ require(["esri/Map",
         },
     });
     
+ view.when(function() {
+	
+          // get the first layer in the collection of operational layers in the WebMap
+          // when the resources in the MapView have loaded.
+        var featureLayer =    scene.layers.getItemAt(1);
+
+        const legend = new Expand({
+          content: new Legend({
+            view: view,
+            style: "card" // other styles include 'classic'
+          }),
+          view: view,
+          expanded: true
+        });
+      
+   view.ui.add(legend, "top-left");
+   });  
+      
+      var layerList = new LayerList({
+  view: view
+});
+      view.ui.add(layerList, "bottom-right");       
+      
+      
     var homeBtn = new Home({
         view: view
       });
@@ -115,5 +142,6 @@ require(["esri/Map",
           symbol: symbol
         };*/
       });
+  
   
   
