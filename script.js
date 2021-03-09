@@ -65,7 +65,7 @@
               directShadowsEnabled: false,
               // don't update the view time when user pans.
               // The clock widget drives the time
-              cameraTrackingEnabled: false
+              cameraTrackingEnabled: true
             }
         },
     });
