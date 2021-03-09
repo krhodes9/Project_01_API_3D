@@ -79,7 +79,7 @@
         const legend = new Expand({
           content: new Legend({
             view: view,
-            style: "classic" // other styles include 'classic'
+            style: "card" // other styles include 'classic'
           }),
           view: view,
           expanded: true
