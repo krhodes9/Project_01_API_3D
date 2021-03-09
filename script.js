@@ -23,7 +23,7 @@
       var camera = new Camera({
         fov: 170,
         position: [
-           2.5937,
+           8.5937,
           -20.9629,
           8000000// elevation in meters
         ],
@@ -45,7 +45,7 @@
       var camera3 = new Camera({
           position: [
            32.7832,
-         20.5085,
+         15.5085,
           25000000// elevation in meters
         ],
         tilt: 0,
@@ -61,7 +61,7 @@
         camera: camera3,
         environment: {
             lighting: {
-              date: new Date("Tue Mar 2 2021 16:00:00 GMT+0100 (CET)"),
+              date: new Date("Tue Mar 2 2021 10:00:00 GMT+0100 (CET)"),
               directShadowsEnabled: false,
               // don't update the view time when user pans.
               // The clock widget drives the time
@@ -79,7 +79,7 @@
         const legend = new Expand({
           content: new Legend({
             view: view,
-            style: "card" // other styles include 'classic'
+            style: "classic" // other styles include 'classic'
           }),
           view: view,
           expanded: true
@@ -142,6 +142,4 @@
           symbol: symbol
         };*/
       });
-  
-  
   
