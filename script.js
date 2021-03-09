@@ -61,11 +61,11 @@
         camera: camera3,
         environment: {
             lighting: {
-              date: new Date("Tue Mar 2 2021 10:00:00 GMT+0100 (CET)"),
+              date: new Date("Tue Mar 2 2021 06:00:00 GMT+0100 (CET)"),
               directShadowsEnabled: false,
               // don't update the view time when user pans.
               // The clock widget drives the time
-              cameraTrackingEnabled: true
+              cameraTrackingEnabled: false
             }
         },
     });
